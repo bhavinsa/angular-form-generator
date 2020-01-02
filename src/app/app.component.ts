@@ -134,6 +134,7 @@ export class AppComponent implements OnInit {
     control.removeAt(index);
   }
 
+  get checkError() { return this.myForm.controls; }
 
 
 
