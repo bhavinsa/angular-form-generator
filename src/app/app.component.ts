@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms';
 import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browser';
-
+import { environment } from '../environments/environment';
 enum INPUTS {
   TEXT = 'text',
   TEXTAREA = 'textarea',
@@ -33,7 +33,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    console.log('environment' + JSON.stringify(environment));
     this.inputTypesArr = [INPUTS.TEXT, INPUTS.TEXTAREA, INPUTS.SELECT]
 
     this.myForm = this.fb.group({

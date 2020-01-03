@@ -14,7 +14,7 @@
         </span> -->
       </div>
     </div>
-    <div formArrayName="arr" *ngFor="let a of myForm.get('arr').controls; let i = index">
+    <div formArrayName="arr" *ngFor="let a of myForm.get('arr')['controls']; let i = index">
       <div [formGroupName]="i">
         <div class="row">
           <div class="col-sm-3">
@@ -30,7 +30,7 @@
           <div class="col-sm-3">
             <mat-form-field>
               <mat-label>Select an option</mat-label>
-              <mat-select [(value)]="selected" formControlName="inputType">
+              <mat-select formControlName="inputType">
                 <mat-option *ngFor="let input of inputTypesArr" value="{{input}}">{{ input }}</mat-option>
               </mat-select>
             </mat-form-field>
